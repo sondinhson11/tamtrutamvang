@@ -1,64 +1,112 @@
 import random
 from openpyxl import Workbook
+import os
+
+# Chỉnh Sửa Ở Đây
+so_luong_nguoi= 120 # Số Người
+ma_tinh = '026'  # Mã tỉnh
+nam_sinh_nho_nhat =1970 # Năm Sinh Nhỏ Nhất Trong Danh Sách
+nam_sinh_lon_nhat =1990 # Năm Sinh Lớn Nhất Trong Danh Sách
+noi_lam_viec ="Thị Trấn Hợp Hòa"
+dan_toc="Kinh"
+quoc_tich="Việt Nam"
+diachi_quocgia="Cộng hòa xã hội chủ nghĩa Việt Nam"
+thanh_pho="Tỉnh Vĩnh Phúc"
+quan_huyen="Huyện Tam Dương"
+phuong_xa="Thị Trấn Hợp Hòa"
+dia_chi="Thị Trấn Hợp Hòa"
+loai_cu_tru="Tạm trú"
+ngay_den="05/06/2023"
+ngay_di="06/06/2023"
+ly_do ="Du Lịch"
+
+# 
+# 
+
+# Kiểm tra nếu tệp Excel đã tồn tại, thì xóa nó
+if os.path.exists('danh_sach_nguoi_yeu_cau.xlsx'):
+    os.remove('danh_sach_nguoi_yeu_cau.xlsx')
+
 
 # Tạo một danh sách các họ, tên đệm và tên
 ho_list = [
     'Nguyễn', 'Trần', 'Lê', 'Phạm', 'Hoàng', 'Huỳnh', 'Phan', 'Vũ', 'Đặng', 'Bùi',
-    'Đỗ', 'Hồ', 'Ngô', 'Dương', 'Lý', 'Quách', 'Trương', 'Võ', 'Đoàn', 'Trịnh',
-    'Lương', 'Đào', 'Mai', 'Hà', 'Đinh', 'Thái', 'Vương', 'Trịnh', 'Bành', 'Lục'
+    'Đỗ', 'Hồ', 'Ngô', 'Dương', 'Lý', 'Trương', 'Võ', 'Đoàn', 'Trịnh',
+    'Lương', 'Đào', 'Mai', 'Hà', 'Đinh', 'Thái', 'Vương', 'Trịnh'
 ]
-ten_dem_list = [
-    'Văn', 'Thị', 'Đức', 'Hữu', 'Đức', 'Thịnh', 'Hải', 'Thu', 'Đình', 'Phước',
-    'Thanh', 'Như', 'Xuân', 'Công', 'Ngọc', 'Thế', 'Tuấn', 'Nguyệt', 'Tâm', 'Gia'
+ten_dem_nam_list = [
+    'Văn', 'Đức', 'Hữu', 'Thành', 'Minh', 'Quốc', 'Công', 'Đình', 'Phước', 'Gia',
+    'Nhật', 'Sơn', 'Tuấn', 'Huy', 'Hải', 'Khánh', 'Khoa', 'Kiên', 'Long', 'Phúc'
+]
+ten_dem_nu_list = ['Thị', 'Thu', 'Ngọc','Phương', 'Thảo', 'Linh', 'Hạnh'
+]
+# Tạo một danh sách các tên nam và nữ
+ten_nam_list = [
+    'An', 'Bình', 'Cường', 'Dũng', 'Dương', 'Hiếu', 'Linh', 'Minh', 'Quân', 'Sơn',
+    'Thành', 'Thủy', 'Tuấn', 'Hưng', 'Hải', 'Khánh', 'Khoa', 'Kiên', 'Long', 'Phúc'
 ]
 
-# Tạo một danh sách các tên
-ten_list = [
-    'An', 'Bình', 'Cường', 'Dung', 'Dũng', 'Dương', 'Hiếu', 'Linh', 'Minh', 'Trang',
-    'Quân', 'Hoài', 'Sơn', 'Thu', 'Thủy', 'Yến', 'Hoa', 'Hương', 'Long', 'Mạnh'
+ten_nu_list = [
+    'Anh', 'Bích', 'Cẩm', 'Diễm', 'Hà', 'Hạnh', 'Lan', 'Linh', 'Mai', 'My',
+    'Ngọc', 'Nhi', 'Oanh', 'Phương', 'Quỳnh', 'Thảo', 'Trâm', 'Trang', 'Xuân', 'Yến'
 ]
-
 # Tạo một danh sách Excel mới
 wb = Workbook()
 ws = wb.active
 
-# Thêm tiêu đề cho các cột
-ws.append(['Họ và tên', 'Ngày sinh', 'Giới tính', 'Số căn cước'])
-
 # Tạo 80 người yêu cầu
-for i in range(80):
+cccd_suffix_list = []  # Danh sách lưu trữ các số cuối của căn cước đã được tạo ra
+
+for i in range(so_luong_nguoi):
     ho = random.choice(ho_list)
-    ten_dem = random.choice(ten_dem_list)
-    ten = random.choice(ten_list)
-    gioi_tinh = random.choice(['Giới tính nam', 'Giới tính nữ'])
+    gioi_tinh = random.choice(['Giới tính Nam', 'Giới tính Nữ'])
     ngay_sinh = random.randint(1, 28)
     thang_sinh = random.randint(1, 12)
-    nam_sinh = random.randint(1960, 1980)
-    
+    nam_sinh = random.randint(nam_sinh_nho_nhat, nam_sinh_lon_nhat)
+
     # Chỉ chọn người yêu cầu đăng ký khai sinh tại Hà Nội
-    ma_tinh = '001'  # Mã tỉnh Hà Nội
-    
     # Lấy mã giới tính
     if nam_sinh >= 1900 and nam_sinh <= 1999:
-        ma_gioi_tinh = '0' if gioi_tinh == 'Giới tính nam' else '1'
+        ma_gioi_tinh = '0' if gioi_tinh == 'Giới tính Nam' else '1'
     elif nam_sinh >= 2000 and nam_sinh <= 2099:
-        ma_gioi_tinh = '2' if gioi_tinh == 'Giới tính nam' else '3'
+        ma_gioi_tinh = '2' if gioi_tinh == 'Giới tính Nam' else '3'
     elif nam_sinh >= 2100 and nam_sinh <= 2199:
-        ma_gioi_tinh = '4' if gioi_tinh == 'Giới tính nam' else '5'
+        ma_gioi_tinh = '4' if gioi_tinh == 'Giới tính Nam' else '5'
     elif nam_sinh >= 2200 and nam_sinh <= 2299:
-        ma_gioi_tinh = '6' if gioi_tinh == 'Giới tính nam' else '7'
+        ma_gioi_tinh = '6' if gioi_tinh == 'Giới tính Nam' else '7'
     elif nam_sinh >= 2300 and nam_sinh <= 2399:
-        ma_gioi_tinh = '8' if gioi_tinh == 'Giới tính nam' else '9'
-    
+        ma_gioi_tinh = '8' if gioi_tinh == 'Giới tính Nam' else '9'
+
     # Lấy mã năm sinh
     ma_nam_sinh = str(nam_sinh)[-2:]
-    
+
     # Tạo số căn cước
-    so_can_cuoc = f'{ma_tinh}{ma_gioi_tinh}{ma_nam_sinh}{random.randint(100000, 999999):06}'
-    
+    while True:
+        suffix = random.randint(1000, 9999)  # Số cuối của căn cước
+        if suffix not in cccd_suffix_list:
+            cccd_suffix_list.append(suffix)
+            break
+
+    random_numbers = ''.join(str(random.randint(0, 9)) for _ in range(6))
+
+    so_can_cuoc = f'{ma_tinh}{ma_gioi_tinh}{ma_nam_sinh}{random_numbers}'
+
+
+    if gioi_tinh == 'Giới tính Nam':
+        ten_dem = random.choice(ten_dem_nam_list)
+    else:
+        ten_dem = random.choice(ten_dem_nu_list)
+
+    if gioi_tinh == 'Giới tính Nam':
+        ten = random.choice(ten_nam_list)
+    else:
+        ten = random.choice(ten_nu_list)
+
+    nghe_nghiep = 'Tự do'
+
     ho_ten = f'{ho} {ten_dem} {ten}'
-    
-    ws.append([ho_ten, f'{ngay_sinh:02d}/{thang_sinh:02d}/{nam_sinh}', gioi_tinh, so_can_cuoc])
+
+    ws.append([ho_ten, f'{ngay_sinh:02d}/{thang_sinh:02d}/{nam_sinh}', gioi_tinh, so_can_cuoc,'','','',nghe_nghiep,noi_lam_viec,dan_toc,quoc_tich,diachi_quocgia,thanh_pho,quan_huyen,phuong_xa,dia_chi,loai_cu_tru,ngay_den,ngay_di,ly_do])
 
 # Lưu danh sách vào tệp Excel
 wb.save('danh_sach_nguoi_yeu_cau.xlsx')
