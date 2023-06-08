@@ -3,21 +3,21 @@ from openpyxl import Workbook
 import os
 
 # Chỉnh Sửa Ở Đây
-so_luong_nguoi= 120 # Số Người
-ma_tinh = '026'  # Mã tỉnh
+so_luong_nguoi= 60 # Số Người
+ma_tinh = '001'  # Mã tỉnh
 nam_sinh_nho_nhat =1970 # Năm Sinh Nhỏ Nhất Trong Danh Sách
-nam_sinh_lon_nhat =1990 # Năm Sinh Lớn Nhất Trong Danh Sách
-noi_lam_viec ="Thị Trấn Hợp Hòa"
+nam_sinh_lon_nhat =1980 # Năm Sinh Lớn Nhất Trong Danh Sách
+noi_lam_viec ="Bắc Sơn"
 dan_toc="Kinh"
 quoc_tich="Việt Nam"
 diachi_quocgia="Cộng hòa xã hội chủ nghĩa Việt Nam"
-thanh_pho="Tỉnh Vĩnh Phúc"
-quan_huyen="Huyện Tam Dương"
-phuong_xa="Thị Trấn Hợp Hòa"
-dia_chi="Thị Trấn Hợp Hòa"
+thanh_pho="Thành Phố Hà Nội"
+quan_huyen="Huyện Sóc Sơn"
+phuong_xa="Xã Bắc Sơn"
+dia_chi="Bắc Sơn"
 loai_cu_tru="Tạm trú"
-ngay_den="05/06/2023"
-ngay_di="06/06/2023"
+ngay_den="07/06/2023"
+ngay_di="08/06/2023"
 ly_do ="Du Lịch"
 
 # 
@@ -38,8 +38,7 @@ ten_dem_nam_list = [
     'Văn', 'Đức', 'Hữu', 'Thành', 'Minh', 'Quốc', 'Công', 'Đình', 'Phước', 'Gia',
     'Nhật', 'Sơn', 'Tuấn', 'Huy', 'Hải', 'Khánh', 'Khoa', 'Kiên', 'Long', 'Phúc'
 ]
-ten_dem_nu_list = ['Thị', 'Thu', 'Ngọc','Phương', 'Thảo', 'Linh', 'Hạnh'
-]
+ten_dem_nu_list = ['Thị', 'Thu', 'Ngọc','Phương', 'Thảo', 'Linh', 'Hạnh']
 # Tạo một danh sách các tên nam và nữ
 ten_nam_list = [
     'An', 'Bình', 'Cường', 'Dũng', 'Dương', 'Hiếu', 'Linh', 'Minh', 'Quân', 'Sơn',
