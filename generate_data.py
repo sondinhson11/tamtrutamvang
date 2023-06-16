@@ -4,20 +4,20 @@ import os
 
 # Chỉnh Sửa Ở Đây
 so_luong_nguoi= 60 # Số Người
-ma_tinh = '001'  # Mã tỉnh
-nam_sinh_nho_nhat =1970 # Năm Sinh Nhỏ Nhất Trong Danh Sách
-nam_sinh_lon_nhat =1980 # Năm Sinh Lớn Nhất Trong Danh Sách
-noi_lam_viec ="Bắc Sơn"
+ma_tinh = '026'  # Mã tỉnh
+nam_sinh_nho_nhat =1980 # Năm Sinh Nhỏ Nhất Trong Danh Sách
+nam_sinh_lon_nhat =1996 # Năm Sinh Lớn Nhất Trong Danh Sách
+noi_lam_viec ="Hoàng Hoa"
 dan_toc="Kinh"
 quoc_tich="Việt Nam"
 diachi_quocgia="Cộng hòa xã hội chủ nghĩa Việt Nam"
-thanh_pho="Thành Phố Hà Nội"
-quan_huyen="Huyện Sóc Sơn"
-phuong_xa="Xã Bắc Sơn"
-dia_chi="Bắc Sơn"
+thanh_pho="Tỉnh Vĩnh Phúc"
+quan_huyen="Huyện Tam Dương"
+phuong_xa="Xã Hoàng Hoa"
+dia_chi="Hoàng Hoa"
 loai_cu_tru="Tạm trú"
-ngay_den="07/06/2023"
-ngay_di="08/06/2023"
+ngay_den="16/06/2023"
+ngay_di="17/06/2023"
 ly_do ="Du Lịch"
 
 # 
