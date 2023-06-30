@@ -3,21 +3,21 @@ from openpyxl import Workbook
 import os
 
 # Chỉnh Sửa Ở Đây
-so_luong_nguoi= 36 # Số Người
+so_luong_nguoi= 27 # Số Người
 ma_tinh = '001'  # Mã tỉnh
 nam_sinh_nho_nhat =1980 # Năm Sinh Nhỏ Nhất Trong Danh Sách
-nam_sinh_lon_nhat =1996 # Năm Sinh Lớn Nhất Trong Danh Sách
-noi_lam_viec ="Thạch Thán"
+nam_sinh_lon_nhat =1999 # Năm Sinh Lớn Nhất Trong Danh Sách
+noi_lam_viec ="Bắc Sơn"
 dan_toc="Kinh"
 quoc_tich="Việt Nam"
 diachi_quocgia="Cộng hòa xã hội chủ nghĩa Việt Nam"
 thanh_pho="Thành Phố Hà Nội"
-quan_huyen="Huyện Quốc Oai"
-phuong_xa="Xã Thạch Thán"
-dia_chi="Thạch Thán"
+quan_huyen="Huyện Sóc Sơn"
+phuong_xa="Xã Bắc Sơn"
+dia_chi="Bắc Sơn"
 loai_cu_tru="Tạm trú"
-ngay_den="16/06/2023"
-ngay_di="17/06/2023"
+ngay_den="30/06/2023"
+ngay_di="01/07/2023"
 ly_do ="Du Lịch"
 
 # 
