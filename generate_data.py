@@ -3,7 +3,7 @@ from openpyxl import Workbook
 import os
 
 # Chỉnh Sửa Ở Đây
-so_luong_nguoi= 27 # Số Người
+so_luong_nguoi= 20 # Số Người
 ma_tinh = '001'  # Mã tỉnh
 nam_sinh_nho_nhat =1980 # Năm Sinh Nhỏ Nhất Trong Danh Sách
 nam_sinh_lon_nhat =1999 # Năm Sinh Lớn Nhất Trong Danh Sách
@@ -16,8 +16,8 @@ quan_huyen="Huyện Sóc Sơn"
 phuong_xa="Xã Bắc Sơn"
 dia_chi="Bắc Sơn"
 loai_cu_tru="Tạm trú"
-ngay_den="30/06/2023"
-ngay_di="01/07/2023"
+ngay_den="02/07/2023"
+ngay_di="03/07/2023"
 ly_do ="Du Lịch"
 
 # 
