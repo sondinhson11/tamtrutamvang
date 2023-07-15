@@ -3,25 +3,25 @@ from openpyxl import Workbook
 import os
 
 # Chỉnh Sửa Ở Đây
-so_luong_nguoi= 20 # Số Người
-ma_tinh = '001'  # Mã tỉnh
-nam_sinh_nho_nhat =1980 # Năm Sinh Nhỏ Nhất Trong Danh Sách
-nam_sinh_lon_nhat =1999 # Năm Sinh Lớn Nhất Trong Danh Sách
-noi_lam_viec ="Bắc Sơn"
-dan_toc="Kinh"
-quoc_tich="Việt Nam"
-diachi_quocgia="Cộng hòa xã hội chủ nghĩa Việt Nam"
-thanh_pho="Thành Phố Hà Nội"
-quan_huyen="Huyện Sóc Sơn"
-phuong_xa="Xã Bắc Sơn"
-dia_chi="Bắc Sơn"
-loai_cu_tru="Tạm trú"
-ngay_den="02/07/2023"
-ngay_di="03/07/2023"
-ly_do ="Du Lịch"
+so_luong_nguoi = 16  # Số Người
+ma_tinh = '026'  # Mã tỉnh
+nam_sinh_nho_nhat = 1970  # Năm Sinh Nhỏ Nhất Trong Danh Sách
+nam_sinh_lon_nhat = 1995  # Năm Sinh Lớn Nhất Trong Danh Sách
+noi_lam_viec = "Nhân Đạo"
+dan_toc = "Kinh"
+quoc_tich = "Việt Nam"
+diachi_quocgia = "Cộng hòa xã hội chủ nghĩa Việt Nam"
+thanh_pho = "Vĩnh Phúc"
+quan_huyen = "Sông Lô"
+phuong_xa = "Nhân Đạo"
+dia_chi = "Nhân Đạo"
+loai_cu_tru = "Tạm trú"
+ngay_den = "08/07/2023"
+ngay_di = "09/07/2023"
+ly_do = "Du Lịch"
 
-# 
-# 
+#
+#
 
 # Kiểm tra nếu tệp Excel đã tồn tại, thì xóa nó
 if os.path.exists('danh_sach_nguoi_yeu_cau.xlsx'):
@@ -38,7 +38,7 @@ ten_dem_nam_list = [
     'Văn', 'Đức', 'Hữu', 'Thành', 'Minh', 'Quốc', 'Công', 'Đình', 'Phước', 'Gia',
     'Nhật', 'Sơn', 'Tuấn', 'Huy', 'Hải', 'Khánh', 'Khoa', 'Kiên', 'Long', 'Phúc'
 ]
-ten_dem_nu_list = ['Thị', 'Thu', 'Ngọc','Phương', 'Thảo', 'Linh', 'Hạnh']
+ten_dem_nu_list = ['Thị', 'Thu', 'Ngọc', 'Phương', 'Thảo', 'Linh', 'Hạnh']
 # Tạo một danh sách các tên nam và nữ
 ten_nam_list = [
     'An', 'Bình', 'Cường', 'Dũng', 'Dương', 'Hiếu', 'Linh', 'Minh', 'Quân', 'Sơn',
@@ -90,7 +90,6 @@ for i in range(so_luong_nguoi):
 
     so_can_cuoc = f'{ma_tinh}{ma_gioi_tinh}{ma_nam_sinh}{random_numbers}'
 
-
     if gioi_tinh == 'Giới tính Nam':
         ten_dem = random.choice(ten_dem_nam_list)
     else:
@@ -105,7 +104,8 @@ for i in range(so_luong_nguoi):
 
     ho_ten = f'{ho} {ten_dem} {ten}'
 
-    ws.append([ho_ten, f'{ngay_sinh:02d}/{thang_sinh:02d}/{nam_sinh}', gioi_tinh, so_can_cuoc,'','','',nghe_nghiep,noi_lam_viec,dan_toc,quoc_tich,diachi_quocgia,thanh_pho,quan_huyen,phuong_xa,dia_chi,loai_cu_tru,ngay_den,ngay_di,ly_do])
+    ws.append([ho_ten, f'{ngay_sinh:02d}/{thang_sinh:02d}/{nam_sinh}', gioi_tinh, so_can_cuoc, '', '', '', nghe_nghiep, noi_lam_viec,
+              dan_toc, quoc_tich, diachi_quocgia, thanh_pho, quan_huyen, phuong_xa, dia_chi, loai_cu_tru, ngay_den, ngay_di, ly_do])
 
 # Lưu danh sách vào tệp Excel
 wb.save('danh_sach_nguoi_yeu_cau.xlsx')
